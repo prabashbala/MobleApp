@@ -21,7 +21,7 @@ public class MobileApiRequestService {
 		re.getHttpConnection();
 	}
 
-	private void getHttpConnection() {
+	public boolean getHttpConnection() {
 		URL url = null;
 		
 		String reqeust="<loginTokenMobileRequest><userTokenId></userTokenId><applicationTokenId>DC4F01193B4</applicationTokenId><userid>mobile.test2@mailinator.com</userid><password>password1</password></loginTokenMobileRequest>";
@@ -46,5 +46,6 @@ public class MobileApiRequestService {
 		} finally {
 			urlConnection.disconnect();
 		}
+		return true;
 	}
 }
