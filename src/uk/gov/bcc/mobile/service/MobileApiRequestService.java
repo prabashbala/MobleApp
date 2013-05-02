@@ -28,14 +28,16 @@ public class MobileApiRequestService {
 
 		HttpURLConnection urlConnection = null;
 		try {
-			url = new URL("http://10.65.17.187:8080/api/Customer/Login");
+			url = new URL("http://sb0073308.addm.ads.brm.pri:8080/api/Customer/Login");
 			urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setDoOutput(true);
 			urlConnection.setChunkedStreamingMode(0);
 			urlConnection.setRequestMethod("POST");
+			urlConnection.setRequestProperty("Accept-Charset", "UTF-8");
 			urlConnection.setRequestProperty("Content-Type", "application/xml");
+			urlConnection.connect();
 			OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-			out.write(reqeust.getBytes());
+			out.write(reqeust.getBytes("UTF-8"));
 
 			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 			System.out.println(in.toString());

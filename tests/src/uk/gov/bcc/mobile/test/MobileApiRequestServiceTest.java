@@ -1,36 +1,26 @@
 package uk.gov.bcc.mobile.test;
 
-import uk.gov.bcc.mobile.service.MobileApiRequestService;
 import junit.framework.TestCase;
-import junit.framework.TestResult;
+import uk.gov.bcc.mobile.service.MobileApiRequestService;
 
 public class MobileApiRequestServiceTest extends TestCase {
-	
-	private MobileApiRequestService mobileservice= null;
 
-	@Override
-	public void run(TestResult result) {
-		// TODO Auto-generated method stub
-		mobileservice.getMobileApiResponse();
-	}
+	private MobileApiRequestService mobileservice = null;
 
 	@Override
 	protected void setUp() throws Exception {
 		// TODO Auto-generated method stub
-		super.setUp();
 		mobileservice = new MobileApiRequestService();
 	}
-	
+
 	@Override
 	protected void runTest() throws Throwable {
 		// TODO Auto-generated method stub
-		super.runTest();
+		testGetMobileApiResponse();
 	}
-	
-	public void testGetMobileApiResponse(){
+
+	public void testGetMobileApiResponse() {
 		assertTrue(mobileservice.getHttpConnection());
 	}
-	
-	
 
 }
