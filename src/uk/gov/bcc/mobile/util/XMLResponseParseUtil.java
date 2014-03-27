@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 public class XMLResponseParseUtil {
+	
 
 	public Map<String, String> parseXMLResponse(String XMLResponse) {
 
